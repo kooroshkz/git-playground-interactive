@@ -16,7 +16,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.MODE === 'production' ? '/git-playground-interactive' : '/'}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/command/:id" element={<CommandDetail />} />
